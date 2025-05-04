@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Mouse Events Using JavaScript</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar">
+            <div class="logo">JS-NOTES</div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li>
+                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Events</a>
+                    <div class="dropdown-content">
+                        <a href="#inline-events">Inline Events</a>
+                        <a href="#dom-events">DOM Events</a>
+                        <a href="#">Mouse Events</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Date & Time</a>
+                    <div class="dropdown-content">
+                        <a href="#">Web Development</a>
+                        <a href="#">Design</a>
+                        <a href="#">SEO</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Objects</a>
+                    <div class="dropdown-content">
+                        <a href="#">Team</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="#">Team</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://www.notion.so/JavaScript-Course-1ddaf5da3a0a801bbb6ef303800bd266?pvs=4" target="_blank">Notes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===============  Start Inline Event =============== -->
+    <main>
+        <div id="events">
+            <section id="inline-events">
+                <h1>Inline Events</h1>
+                <div class="inline-events">
+                    <p>
+                        An inline event handler in JavaScript is a way to attach JavaScript code directly inside an
+                        <abbr title="Hyper Text Markup Language">HTML</abbr> tag
+                        using event attributes like onclick, onmouseover, onkeydown, etc.
+                    </p>
+                    <div class="sub-div">
+                        <button onclick="showCustomAlert('Welcome Bhai 😊')">One Click !</button>
+                        <button ondblclick="showCustomAlert('You just double clicked!')">Double Click !</button>
+                        <button onmouseover="showCustomAlert('You hovered over the button.')">Mouse Over !</button>
+                    </div>
+                </div>
+            </section>
+            <!-- =============== End Inline Event =============== -->
+
+            <!-- =============== Start DOM Event Handler  =============== -->
+            <section id="dom-events">
+                <h1>DOM Event handlers</h1>
+                <div class="inline-events">
+                    <p>
+                        Document Object Model <abbr title="Document Object Model">(DOM)</abbr> event handlers are
+                        JavaScript
+                        functions that are executed in response to specific events that occur
+                        on <abbr title="Hyper Text Markup Language">HTML</abbr> elements. These events can be triggered
+                        by
+                        user
+                        interactions, such as clicks, key presses,
+                        mouse movements, and more.
+                    </p>
+                    <div class="sub-div">
+                        <button id="btn1">Mouse Out!</button>
+                        <button id="btn2">Right Click !</button>
+                        <button id="btn3">Mouse Down !</button>
+                    </div>
+                    <script>
+                        // Get the buttons by their IDs
+                        const btn1 = document.getElementById("btn1");
+                        const btn2 = document.getElementById("btn2");
+                        const btn3 = document.getElementById("btn3");
+
+
+                        // Add event listeners to the buttons
+                        btn1.addEventListener("mouseout", () => {
+                            showCustomAlert("Mouse Out 📤");
+                        });
+
+                        btn2.addEventListener("contextmenu", () => {
+                            showCustomAlert("You just Right clicked!");
+                        });
+
+                        btn3.addEventListener("mousedown", () => {
+                            showCustomAlert("Mouse Down! 👇");
+                        });
+                    </script>
+                </div>
+            </section>
+            <!-- =============== End DOM EVent Handler ===============  -->
+        </div>
+
+    </main>
+    <!-- Custom Alert Box -->
+    <div id="custom-alert">
+        <div class="alert-box">
+            <p id="alert-msg">This is a custom alert!</p>
+            <button onclick="hideCustomAlert()" id="alert-btn">OK</button>
+        </div>
+    </div>
+
+
+    <script src="./index.js">
+        // DOM Event Handler
+
+
+    </script>
+
+</body>
+</html>
